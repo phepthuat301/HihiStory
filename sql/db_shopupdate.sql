@@ -1,5 +1,4 @@
-#THIS SQL IS OPTIONAL, TO BE USED AFTER 'db_drops.sql'
-#THIS REQUIRES PROVIDED WZ FILES
+
 
 USE `heavenms`;
 

@@ -1,4 +1,4 @@
-﻿#EXECUTE THIS FIRST, THEN NEXT SQL: 'db_drops.sql'
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -11,7 +11,7 @@ SET time_zone = "+00:00";
 DROP DATABASE IF EXISTS `heavenms`;
 CREATE DATABASE `heavenms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `heavenms`;
-
+accounts
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(13) NOT NULL DEFAULT '',

@@ -282,6 +282,15 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
                 return completeQuest(id, npc);
         }
         
+
+    public int getDonatePoints() {
+        return getClient().getDonatePoints();
+    }
+    
+    public void gainDonatePoints(int gain) {
+        getClient().useDonatePoints(gain);
+    }
+
 	public int getMeso() {
 		return getPlayer().getMeso();
 	}

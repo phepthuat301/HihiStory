@@ -407,7 +407,7 @@ public class MapleCharacter extends AbstractMapleCharacterObject {
         quests = new LinkedHashMap<>();
         setPosition(new Point(0, 0));
     }
-    
+
     private static MapleJob getJobStyleInternal(int jobid, byte opt) {
         int jobtype = jobid / 100;
         

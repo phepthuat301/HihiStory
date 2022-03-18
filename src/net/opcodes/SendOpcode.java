@@ -31,7 +31,7 @@ public enum SendOpcode {
     CONFIRM_EULA_RESULT(0x05),
     CHECK_PINCODE(0x06),
     UPDATE_PINCODE(0x07),
-    
+
     VIEW_ALL_CHAR(0x08),
     SELECT_CHARACTER_BY_VAC(0x09),
     

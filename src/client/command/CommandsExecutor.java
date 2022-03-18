@@ -211,7 +211,7 @@ public class CommandsExecutor {
         addCommand("mylawn", MapOwnerClaimCommand.class);
         addCommand("bosshp", BossHpCommand.class);
         addCommand("mobhp", MobHpCommand.class);
-        
+        addCommand("taxi", 1, TaxiCommand.class);
         commandsNameDesc.add(levelCommandsCursor);
     }
 
@@ -223,6 +223,7 @@ public class CommandsExecutor {
         addCommand("whodrops", 1, WhoDropsCommand.class);
         addCommand("buffme", 1, BuffMeCommand.class);
         addCommand("goto", 1, GotoCommand.class);
+        
         
         commandsNameDesc.add(levelCommandsCursor);
     }
@@ -298,6 +299,7 @@ public class CommandsExecutor {
         addCommand("fame", 3, FameCommand.class);
         addCommand("givenx", 3, GiveNxCommand.class);
         addCommand("givevp", 3, GiveVpCommand.class);
+        addCommand("givedp", 3, GiveDpCommand.class);
         addCommand("givems", 3, GiveMesosCommand.class);
         addCommand("giverp", 3, GiveRpCommand.class);
         addCommand("expeds", 3, ExpedsCommand.class);
