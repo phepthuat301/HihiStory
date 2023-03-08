@@ -23,7 +23,6 @@ import config.YamlConfig;
 import net.server.world.World;
 import client.MapleCharacter;
 import net.server.PlayerStorage;
-import tools.FilePrinter;
 
 /**
  * @author Ronan
@@ -33,7 +32,7 @@ public class CharacterAutosaverTask extends BaseTask implements Runnable {  // t
     @Override
     public void run() {
         if(!YamlConfig.config.server.USE_AUTOSAVE) return;
-        FilePrinter.print(FilePrinter.AUTOSAVING_CHARACTER,"abc");
+        
         PlayerStorage ps = wserv.getPlayerStorage();
         for(MapleCharacter chr: ps.getAllCharacters()) {
             if(chr != null && chr.isLoggedin()) {

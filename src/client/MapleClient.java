@@ -121,6 +121,7 @@ public class MapleClient {
         // thanks Masterrulax & try2hack for pointing out a bottleneck issue with shared locks, shavit for noticing an opportunity for improvement
         private Calendar tempBanCalendar;
 	private int votePoints;
+        private int donatePoints;
 	private int voteTime = -1;
         private int visibleWorlds;
 	private long lastNpcClick;
@@ -1283,6 +1284,58 @@ public class MapleClient {
 			Connection con = DatabaseConnection.getConnection();
 			try (PreparedStatement ps = con.prepareStatement("UPDATE accounts SET votepoints = ? WHERE id = ?")) {
 				ps.setInt(1, votePoints);
+				ps.setInt(2, accId);
+				ps.executeUpdate();
+			}
+                        
+                        con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+        
+        public int getDonatePoints(){
+		int points = 0;
+		try {
+                        Connection con = DatabaseConnection.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT `donatepoints` FROM accounts WHERE id = ?");
+			ps.setInt(1, accId);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				points = rs.getInt("donatepoints");
+			}
+			ps.close();
+			rs.close();
+
+                        con.close();
+		} catch (SQLException e) {
+                    e.printStackTrace();
+		}
+		donatePoints = points;
+		return donatePoints;
+	}
+
+	public void addDonatePoints(int points) {
+		donatePoints += points;
+		saveDonatePoints();
+	}
+
+	public void useDonatePoints(int points){
+		if (points > donatePoints){
+			//Should not happen, should probably log this
+			return;
+		}
+		donatePoints -= points;
+		saveDonatePoints();
+		LogHelper.logLeaf(player, false, Integer.toString(points));
+	}
+
+	private void saveDonatePoints() {
+		try {
+			Connection con = DatabaseConnection.getConnection();
+			try (PreparedStatement ps = con.prepareStatement("UPDATE accounts SET donatepoints = ? WHERE id = ?")) {
+				ps.setInt(1, donatePoints);
 				ps.setInt(2, accId);
 				ps.executeUpdate();
 			}

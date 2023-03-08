@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `email` varchar(45) DEFAULT NULL,
   `ip` text,
   `rewardpoints` int(11) NOT NULL DEFAULT '0',
+  `donatepoints` int(11) NOT NULL DEFAULT '0',
   `votepoints` int(11) NOT NULL DEFAULT '0',
   `hwid` varchar(12) NOT NULL DEFAULT '',
   `language` int(1) NOT NULL DEFAULT '2',

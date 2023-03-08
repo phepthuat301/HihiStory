@@ -298,6 +298,7 @@ public class CommandsExecutor {
         addCommand("fame", 3, FameCommand.class);
         addCommand("givenx", 3, GiveNxCommand.class);
         addCommand("givevp", 3, GiveVpCommand.class);
+        addCommand("givedp", 3, GiveDpCommand.class);
         addCommand("givems", 3, GiveMesosCommand.class);
         addCommand("giverp", 3, GiveRpCommand.class);
         addCommand("expeds", 3, ExpedsCommand.class);

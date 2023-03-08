@@ -14,11 +14,11 @@ public class ReadPointsCommand extends Command {
 
         MapleCharacter player = client.getPlayer();
         if (params.length > 2) {
-            player.yellowMessage("Syntax: @points (rp|vp|all)");
+            player.yellowMessage("Syntax: @points (rp|vp|dp|all)");
             return;
         } else if (params.length == 0) {
             player.yellowMessage("RewardPoints: " + player.getRewardPoints() + " | "
-                    + "VotePoints: " + player.getClient().getVotePoints());
+                    + "VotePoints: " + player.getClient().getVotePoints() + " | " +"DonatePoints: " + player.getClient().getDonatePoints());
             return;
         }
 
@@ -29,9 +29,11 @@ public class ReadPointsCommand extends Command {
             case "vp":
                 player.yellowMessage("VotePoints: " + player.getClient().getVotePoints());
                 break;
+            case "dp":
+                player.yellowMessage("DonatePoints: " + player.getClient().getDonatePoints());
             default:
                 player.yellowMessage("RewardPoints: " + player.getRewardPoints() + " | "
-                        + "VotePoints: " + player.getClient().getVotePoints());
+                        + "VotePoints: " + player.getClient().getVotePoints()+ " | " +"DonatePoints: " + player.getClient().getDonatePoints());
                 break;
         }
     }

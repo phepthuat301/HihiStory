@@ -198,7 +198,7 @@ server:
     LOGIN_ATTEMPT_DURATION: 120         #Period in seconds the login attempt remains registered on the system.
 
     #Ip Configuration
-    HOST: 42.116.236.199
+    HOST: 127.0.0.1
     LOCALSERVER: true
     GMSERVER: false
 
@@ -207,7 +207,7 @@ server:
 
     #Server Flags
     USE_CUSTOM_KEYSET: false             #Enables auto-setup of the HeavenMS's custom keybindings when creating characters.
-    USE_DEBUG: true                     #Will enable some text prints on the client, oriented for debugging purposes.
+    USE_DEBUG: false                    #Will enable some text prints on the client, oriented for debugging purposes.
     USE_DEBUG_SHOW_INFO_EQPEXP: false   #Prints on the cmd all equip exp gain info.
     USE_DEBUG_SHOW_RCVD_PACKET: false   #Prints on the cmd all received packet ids.
     USE_DEBUG_SHOW_RCVD_MVLIFE: false   #Prints on the cmd all received move life content.
@@ -304,7 +304,7 @@ server:
     PARTY_BONUS_EXP_RATE: 1.0            #Rate for the party exp bonus reward.
 
     #Miscellaneous Configuration
-    TIMEZONE: GMT+7
+    TIMEZONE: GMT-3
     USE_DISPLAY_NUMBERS_WITH_COMMA: true          #Enforce comma on displayed strings (use this when USE_UNITPRICE_WITH_COMMA is active and you still want to display comma-separated values).
     USE_UNITPRICE_WITH_COMMA: true                #Set this accordingly with the layout of the unitPrices on Item.wz XML's, whether it's using commas or dots to represent fractions.
     MAX_MONITORED_BUFFSTATS: 5                 #Limits accounting for "dormant" buff effects, that should take place when stronger stat buffs expires.
@@ -335,7 +335,7 @@ server:
     MOB_STATUS_MONITOR_LIFE: 84         #Idle proc count the mob disease monitor is allowed to be there before closing it due to inactivity.
     MOB_STATUS_AGGRO_PERSISTENCE: 2     #Idle proc count on aggro update for a mob to keep following the current controller, given him/her is the leading damage dealer.
     MOB_STATUS_AGGRO_INTERVAL: 5000     #Interval in milliseconds between aggro logistics update.
-    USE_AUTOAGGRO_NEARBY: true          #Mobs start following the player when approached.
+    USE_AUTOAGGRO_NEARBY: false         #Mobs start following the player when approached.
 
     #Some Gameplay Enhancing Configurations
     #Scroll Configuration
